@@ -4,12 +4,23 @@ import { createRoot } from "react-dom/client";
 
 // STYLES
 import '../scss/main.scss';
+import Header from "./Header";
+import {HashRouter, Route, Routes} from "react-router-dom";
+import Ranking from "./Ranking";
 
 
 // APP
 const App = () => {
     return (
-        <h1>Start</h1>
+        <HashRouter>
+            <Header />
+            <Routes>
+                <Route path="/ranking" element={<Ranking />} />
+                <Route path="/" element={<Ranking />} />
+            </Routes>
+        </HashRouter>
+
+      //  <Dropdown/>
     )
 }
 
