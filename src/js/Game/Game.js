@@ -55,7 +55,32 @@ const Game = ({name}) => {
     const handleInputChange = (event) => {
         setPlayerName(event.target.value);
     };
+    const submitName = () => {
+       let timeLeft = 300 - time;
+      //  let inputName = document.querySelector(".nameInput").value();
+            fetch(`http://localhost:3000/rankings`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ playerName,
+                    points,
+                    timeLeft,
+                    name })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Successfully added:', data);
+                    reset(); // Reset input field after successful submission
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
 
+           // .then((ranking) => saveRanking(ranking))
+           // .catch((err) => console.log(err));
+        setGameStatus("chooseLevel")
+    };
 
 
 
@@ -84,14 +109,17 @@ const Game = ({name}) => {
                                         )}
                                     </div>
                                     {isMobile ? (
+                                        <>
                                         <div className="mobileTimer">
                                             <Timer/>
                                             <Points/>
                                         </div>
+                                        <button className="surrenderButton" onClick={() => endGame()}>Poddaj się</button>
+                                        </>
                                     ) : (
                                         <div className="mobileTimer">
                                             <Points/>
-                                            <button className="hardButton" onClick={() => endGame()}>Poddaj się</button>
+                                            <button className="surrenderButton" onClick={() => endGame()}>Poddaj się</button>
                                         </div>
                                     )}
                                 </div>
