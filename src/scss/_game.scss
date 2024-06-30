@@ -1,0 +1,91 @@
+.mainGameContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $accent-color8;
+  width: 100%;
+}
+
+.gameContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.quiz-container {
+  background: none;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  & h2{
+    padding: 10px;
+  }
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answerButton {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: $accent-color10;
+  color: $accent-color9;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  width: 250px;
+  height: 60px;
+  word-wrap: break-word;
+  white-space: normal;
+  border: none;
+  line-height: 1;
+}
+
+.answerButton:hover {
+  background-color: $accent-color11;
+}
+
+.startQuizContainer{
+  display: flex;
+  flex-direction: column;
+  & h1{
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+  }
+  & .startGameButtons{
+    display: flex;
+    justify-content: space-between;
+    & .easyButton,.hardButton{
+      color: $accent-color1;
+      padding: 20px 30px;
+      border-radius: 5px;
+      width: 8em;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+    }
+    & .easyButton{
+      background-color: $accent-color12;
+    }
+    & .hardButton{
+      background-color: $accent-color13;
+    }
+  }
+
+}
+
+@media (max-width: 800px) {
+ .mainGameContainer{
+   flex-direction: column;
+ }
+  .mobileTimer{
+    display: flex;
+    justify-content: space-between;
+  }
+}

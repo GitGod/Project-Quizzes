@@ -23,6 +23,9 @@
     margin: 0;
     background-color: $accent-color6;
     border: 1px solid $accent-color5;
+    z-index: 2;
+    position: absolute;
+    width: 150px;
 
 
     li {
@@ -37,6 +40,7 @@
         text-decoration: none;
         color: $accent-color7;
         font-family: Helvetica, serif  ;
+        font-weight: bold;
       }
 
     }
@@ -58,7 +62,7 @@
 
 
       a {
-        text-align: left;
+        text-align: center;
         font: normal normal bold 18px/22px Nunito Sans;
         color: $accent-color1;
         text-transform: uppercase;
@@ -73,7 +77,9 @@
   }
 }
 
-@media (max-width: 767px) {
+
+
+@media (max-width: 800px) {
   .dropdown .dropdown-toggle {
     display: block;
   }
