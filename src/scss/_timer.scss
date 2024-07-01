@@ -35,3 +35,9 @@ button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+@media (max-width: 800px) {
+  .timer{
+    padding-left: 0;
+  }
+}

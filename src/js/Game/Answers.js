@@ -1,27 +1,40 @@
-import React, {useContext, useState} from 'react';
-import {getRandomElement, randomAnswers} from "./RandomAnswers";
-import {AnswersContext, CorrectAnswerContext, PointsContext} from "../MyContext";
+import React, {useContext, useEffect, useState} from 'react';
+import {deleteNumber,randomNewQuestion} from "./RandomAnswers";
+import {
+    AnswersContext,
+    AnswersPoll,
+    CorrectAnswerContext,
+    LeftAnswers,
+    NumberQuestion,
+    PointsContext
+} from "../MyContext";
 
 
 const Answers = ({listOfFlags}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
-    const question = "Jakiego kraju to flaga?";
-    //const { points, setPoints } = useContext(MyContext);
-    const { points, setPoints } = useContext(PointsContext);
-    const { answers, setAnswers } = useContext(AnswersContext);
-    const { correctAnswer, setCorrectAnswer } = useContext(CorrectAnswerContext);
+    const {numberQuestion, setNumberQuestion} = useContext(NumberQuestion)
+    const question = numberQuestion + " Jakiego kraju to flaga?";
+    const {points, setPoints} = useContext(PointsContext);
+    const {answers, setAnswers} = useContext(AnswersContext);
+    const {correctAnswer, setCorrectAnswer} = useContext(CorrectAnswerContext);
+    const {answersPoll, setAnswersPoll} = useContext(AnswersPoll);
+    const {leftAnswers, setLeftAnswers} = useContext(LeftAnswers);
 
     const handleAnswerClick = (answer) => {
         setSelectedAnswer(answer);
-        if(answer === listOfFlags[Object.keys(listOfFlags).at(correctAnswer)]){
+        if (answer === answersPoll[Object.keys(answersPoll).at(correctAnswer)]) {
             setPoints(points + 1);
         }
-        let x = randomAnswers(listOfFlags)
-        setAnswers([listOfFlags[Object.keys(listOfFlags).at(x[0])], listOfFlags[Object.keys(listOfFlags).at(x[1])], listOfFlags[Object.keys(listOfFlags).at(x[2])], listOfFlags[Object.keys(listOfFlags).at(x[3])]]);
-        setCorrectAnswer(getRandomElement(x));
-    };
+        setNumberQuestion(numberQuestion + 1);
+        console.log(leftAnswers)
+        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers)
 
+    };
+    useEffect(() => {
+        deleteNumber(leftAnswers, setLeftAnswers, correctAnswer);
+        console.log(`Count has changed to: ${correctAnswer}`);
+    }, [correctAnswer]);
 
     return (
         <div className="quiz-container">

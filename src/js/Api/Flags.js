@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { fetchResp } from "./utils";
+import {AnswersPoll} from "../MyContext";
 
 export const flags = () => {
 
-    const [flags, setFlags] = useState([]);
+    //const [flags, setFlags] = useState([]);
+    const { answersPoll, setAnswersPoll} = useContext(AnswersPoll);
 
     useEffect(() => {
         fetch(`https://flagcdn.com/pl/codes.json`)
             .then(fetchResp)
-            .then((data) => setFlags(data))
+            .then((data) => setAnswersPoll(data))
             .catch((err) => console.log(err));
     },[]);
 
-    return flags;
+    return answersPoll;
 };
 

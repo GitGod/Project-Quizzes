@@ -1,25 +1,26 @@
-import React, { useState, useContext } from "react";
-import {Route, Routes, useNavigate} from "react-router-dom";
+import React from "react";
+import {useNavigate} from "react-router-dom";
 import Dropdown from "./Dropdown";
-import Ranking from "./Ranking";
-
-
+import {useMediaQuery} from "react-responsive";
 
 const Header = () => {
 
     const navigate = useNavigate();
+    const isMobile = useMediaQuery({maxWidth: 800});
+
     const goToRanking = () => {
         navigate('/ranking');
     };
 
     return (
 
-        <header className="header" >
-            <div class="left-items">
+        <header className="header">
+            <div className="left-items">
                 <a href="/" className="header-title">Quizzes</a>
-                <button className="ranking" onClick={goToRanking} ><i class="fas fa-trophy"></i>Ranking</button>
+                {!isMobile &&
+                    <button className="ranking" onClick={goToRanking}><i className="fas fa-trophy"></i>Ranking</button>}
             </div>
-            <Dropdown />
+            <Dropdown/>
         </header>
 
 

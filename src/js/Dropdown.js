@@ -19,9 +19,9 @@ const Dropdown = () => {
                     </button>
                     {isOpen && (
                         <ul className="dropdown-menu">
-                            <li><a href="#/Kraje">Kraje</a></li>
-                            <li><a href="#/KrajeEuropa">Kraje Europa</a></li>
-                            <li><a href="#/Rankng"><i className="fas fa-trophy"></i> Ranking</a></li>
+                            <li><a onClick={toggleDropdown} href="#/Kraje">Kraje</a></li>
+                            <li><a onClick={toggleDropdown} href="#/KrajeEuropa">Kraje Europa</a></li>
+                            <li><a onClick={toggleDropdown} href="#/ranking"><i className="fas fa-trophy"></i> Ranking</a></li>
                         </ul>
                     )}
                 </>
