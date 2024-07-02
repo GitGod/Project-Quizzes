@@ -24,7 +24,7 @@ const Game = ({name}) => {
 
     const [gameStatus, setGameStatus] = useState("chooseLevel");
     const [numberOfQuestions, setNumberOfQuestions] = useState(100);
-    const [isHard, setLevel] = useState(false);
+    const [level, setLevel] = useState(null);
     const [playerName, setPlayerName] = useState('');
     const {points, setPoints} = useContext(PointsContext);
     const {answers, setAnswers} = useContext(AnswersContext);
@@ -50,7 +50,9 @@ const Game = ({name}) => {
     const startGame = (level) => {
         setGameStatus("started");
         if (level === "hard") {
-            setLevel(true)
+            setLevel("hard")
+        }else if (level === "easy") {
+            setLevel("easy")
         }
         setNumberOfQuestions(leftAnswers.length);
         randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers)
@@ -74,7 +76,7 @@ const Game = ({name}) => {
         setPlayerName(event.target.value);
     };
     const submitName = () => {
-        let timeLeft = 300 - time;
+        let timeSpent = 300 - time;
         fetch(`http://localhost:3000/rankings`, {
             method: 'POST',
             headers: {
@@ -83,8 +85,9 @@ const Game = ({name}) => {
             body: JSON.stringify({
                 playerName,
                 points,
-                timeLeft,
-                name
+                timeSpent,
+                name,
+                level
             })
         })
             .then(response => response.json())
@@ -107,7 +110,7 @@ const Game = ({name}) => {
                     <div className="gameContainer">
                         <Picture
                             srcImg={'https://flagcdn.com/160x120/' + Object.keys(answersPoll).at(correctAnswer) + '.png'}/>
-                        {isHard ? (
+                        {level==="hard" ? (
                             <>
                                 <input className="hardGameInput"/>
                             </>
