@@ -36,7 +36,7 @@ const Game = ({name}) => {
 
 
     let listOfFlags = flags();
-    let listX = setNumbers(answersPoll);
+    let listX = setNumbers(answersPoll,name);
 
 
 
@@ -45,6 +45,7 @@ const Game = ({name}) => {
         setCorrectAnswer([""]);
         setTime(300);
         setPoints(0)
+        setNumberQuestion(1);
     };
 
     const startGame = (level) => {
@@ -55,7 +56,7 @@ const Game = ({name}) => {
             setLevel("easy")
         }
         setNumberOfQuestions(leftAnswers.length);
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers)
+        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
     };
 
 
@@ -64,6 +65,10 @@ const Game = ({name}) => {
             setGameStatus("ended")
         }
     }, [time,leftAnswers, numberQuestion, numberOfQuestions, gameStatus]);
+    useEffect(() => {
+        reset();
+        setGameStatus("chooseLevel")
+    }, [name]);
 
     const endGame = () => {
         setGameStatus("ended");
@@ -108,7 +113,7 @@ const Game = ({name}) => {
                         <Picture
                             srcImg={'https://flagcdn.com/160x120/' + Object.keys(answersPoll).at(correctAnswer) + '.png'}/>
 
-                            <Answers level={level}/>
+                            <Answers level={level} name={name}/>
 
                     </div>
                     {isMobile ? (

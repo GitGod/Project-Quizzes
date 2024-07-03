@@ -10,7 +10,7 @@ import {
 } from "../MyContext";
 
 
-const Answers = ({level}) => {
+const Answers = ({level,name}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const {numberQuestion, setNumberQuestion} = useContext(NumberQuestion)
@@ -29,7 +29,7 @@ const Answers = ({level}) => {
         }
         setNumberQuestion(numberQuestion + 1);
         console.log(leftAnswers)
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers)
+        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
 
     };
     useEffect(() => {

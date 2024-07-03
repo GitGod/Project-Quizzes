@@ -44,6 +44,7 @@ const App = () => {
                                             <Route path="/ranking" element={<Ranking/>}/>
                                             <Route path="/" element={<Ranking/>}/>
                                             <Route path="/Kraje" element={<Game name={"Kraje"}/>}/>
+                                            <Route path="/KrajeEuropa" element={<Game name={"Kraje Europa"}/>}/>
                                         </Routes>
                                     </HashRouter>
                                 </NumberQuestion.Provider>
