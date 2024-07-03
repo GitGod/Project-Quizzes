@@ -48,6 +48,26 @@
 .answerButton:hover {
   background-color: $accent-color11;
 }
+.hardGameFields{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .hardGameButton{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: $accent-color1;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: $accent-color15;
+    transition: background-color 0.3s;
+  }
+  & .hardGameInput{
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+  }
+}
 
 .startQuizContainer{
   display: flex;

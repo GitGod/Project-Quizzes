@@ -60,21 +60,18 @@ const Game = ({name}) => {
 
 
     useEffect(() => {
-        if (time === 0) {
+        if (time === 0 || (leftAnswers.length === 0 && numberQuestion > numberOfQuestions && gameStatus === "started")) {
             setGameStatus("ended")
         }
-    }, [time]);
-    useEffect(() => {
-        if (leftAnswers.length === 0 && numberQuestion > numberOfQuestions && gameStatus === "started") {
-            setGameStatus("ended")
-        }
-    }, [leftAnswers, numberQuestion, numberOfQuestions, gameStatus]);
+    }, [time,leftAnswers, numberQuestion, numberOfQuestions, gameStatus]);
+
     const endGame = () => {
         setGameStatus("ended");
     };
     const handleInputChange = (event) => {
         setPlayerName(event.target.value);
     };
+
     const submitName = () => {
         let timeSpent = 300 - time;
         fetch(`http://localhost:3000/rankings`, {
@@ -110,13 +107,9 @@ const Game = ({name}) => {
                     <div className="gameContainer">
                         <Picture
                             srcImg={'https://flagcdn.com/160x120/' + Object.keys(answersPoll).at(correctAnswer) + '.png'}/>
-                        {level==="hard" ? (
-                            <>
-                                <input className="hardGameInput"/>
-                            </>
-                        ) : (
-                            <Answers listOfFlags={answersPoll}/>
-                        )}
+
+                            <Answers level={level}/>
+
                     </div>
                     {isMobile ? (
                         <>
