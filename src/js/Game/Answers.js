@@ -50,7 +50,7 @@ const Answers = ({level,name}) => {
         }
         setNumberQuestion(numberQuestion + 1);
         setHardInput('');
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers)
+        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
     };
 
     return (

@@ -50,6 +50,9 @@ const Game = ({name}) => {
 
     const startGame = (level) => {
         setGameStatus("started");
+        if(name === "Kraje"){
+            setTime(600);
+        }
         if (level === "hard") {
             setLevel("hard")
         }else if (level === "easy") {
@@ -78,7 +81,13 @@ const Game = ({name}) => {
     };
 
     const submitName = () => {
-        let timeSpent = 300 - time;
+        let timeSpent= 0;
+        if(name === "Kraje"){
+            timeSpent = 600 - time;
+        }else{
+            timeSpent = 300 - time;
+        }
+
         fetch(`http://localhost:3000/rankings`, {
             method: 'POST',
             headers: {

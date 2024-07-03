@@ -14,18 +14,18 @@ export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer,name) =
     let correctNumber = Math.floor(Math.random() * Object.keys(leftAnswers).length);
     numbers.push(leftAnswers[correctNumber]);
     setCorrectAnswer(leftAnswers[correctNumber]);
-    console.log(name);
     for (let i = 0; i < 3; i++) {
-        while (numbers.includes(leftAnswers[number])) {
-            if(name === "Kraje") {
+        if(name === "Kraje") {
+            while (numbers.includes(listOfFlags[number])) {
                 number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
-                console.log(1)
-            } else{
-                number = Math.floor(Math.random() * Object.keys(numbersEu).length);
-                console.log(2)
             }
+            numbers.push(listOfFlags[number])
+        } else{
+            while (numbers.includes(numbersEu[number])) {
+                number = Math.floor(Math.random() * Object.keys(numbersEu).length);
+            }
+            numbers.push(numbersEu[number])
         }
-        numbers.push(leftAnswers[number])
     }
 
     console.log(numbers);
@@ -49,7 +49,7 @@ export const setNumbers = (listOfFlags,name) => {
            setLeftAnswers(numbersEu)
        }
 
-    }, [listOfFlags]);
+    }, [listOfFlags,name]);
     return leftAnswers;
 }
 

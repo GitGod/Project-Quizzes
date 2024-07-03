@@ -66,6 +66,7 @@
     padding: 10px;
     border-radius: 15px;
     font-size: 16px;
+    margin: 10px;
   }
 }
 
@@ -114,9 +115,31 @@
     background-color: $accent-color3;
   }
 }
-.hardGameInput{
-  margin: 10px;
+
+.endGame{
+  & .endGameFields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & .submitName{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: $accent-color1;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: $accent-color15;
+    transition: background-color 0.3s;
+  }
+  & .nameInput{
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 10px;
+  }
 }
+
 
 @media (max-width: 800px) {
  .mainGameContainer{
