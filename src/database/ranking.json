@@ -33,14 +33,6 @@
       "level": "hard"
     },
     {
-      "id": "5044",
-      "playerName": "kk",
-      "points": 0,
-      "timeSpent": 300,
-      "name": "Kraje",
-      "level": null
-    },
-    {
       "id": "8adc",
       "playerName": "ggg",
       "points": 3,
@@ -54,22 +46,6 @@
       "points": 6,
       "timeSpent": 5,
       "name": "Kraje Europa",
-      "level": "easy"
-    },
-    {
-      "id": "e2aa",
-      "playerName": "",
-      "points": 0,
-      "timeSpent": -289,
-      "name": "Kraje",
-      "level": "hard"
-    },
-    {
-      "id": "fede",
-      "playerName": "gdgd",
-      "points": 0,
-      "timeSpent": -300,
-      "name": "Kraje",
       "level": "easy"
     },
     {
@@ -110,6 +86,86 @@
       "points": 44,
       "timeSpent": 156,
       "name": "Kraje Europa",
+      "level": "hard"
+    },
+    {
+      "id": "6430",
+      "playerName": "fsfs",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "a73f",
+      "playerName": "g",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "582b",
+      "playerName": "666",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "ec16",
+      "playerName": "54645",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "aeae",
+      "playerName": "6546546",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "4ea4",
+      "playerName": "555",
+      "points": 0,
+      "timeSpent": 1,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "be17",
+      "playerName": "777",
+      "points": 0,
+      "timeSpent": 1,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "bc5f",
+      "playerName": "666",
+      "points": 0,
+      "timeSpent": 1,
+      "name": "Kraje Europa",
+      "level": "hard"
+    },
+    {
+      "id": "4ed2",
+      "playerName": "778",
+      "points": 0,
+      "timeSpent": 1,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "f666",
+      "playerName": "5555555555",
+      "points": 0,
+      "timeSpent": 0,
+      "name": "Kraje",
       "level": "hard"
     }
   ]

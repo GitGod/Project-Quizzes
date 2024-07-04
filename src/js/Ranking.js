@@ -14,9 +14,8 @@ const Ranking = () => {
         fetch(`http://localhost:3000/rankings`)
             .then(fetchResp)
             .then(data => {
-                const sortedData = sortData(data, 'points', 'timeSpent').slice(0, 10);
-                ;
-                const filteredData = filterData(sortedData, quizLevel, quizName);
+                const sortedData = sortData(data, 'points', 'timeSpent');
+                const filteredData = filterData(sortedData, quizLevel, quizName).slice(0, 10);
                 setRanking(filteredData)
             })
             .catch((err) => console.log(err));

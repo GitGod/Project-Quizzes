@@ -1,4 +1,4 @@
-import React, {useContext, useEffect,useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Answers from "./Answers";
 import Picture from "./Picture";
 import Timer from "./Timer";
@@ -33,11 +33,11 @@ const Game = ({name}) => {
     const {answersPoll, setAnswersPoll} = useContext(AnswersPoll);
     const {leftAnswers, setLeftAnswers} = useContext(LeftAnswers);
     const {numberQuestion, setNumberQuestion} = useContext(NumberQuestion);
+    const [errorMessage, setErrorMessage] = useState('');
 
 
     let listOfFlags = flags();
-    let listX = setNumbers(answersPoll,name);
-
+    let listX = setNumbers(answersPoll, name);
 
 
     const reset = () => {
@@ -50,16 +50,16 @@ const Game = ({name}) => {
 
     const startGame = (level) => {
         setGameStatus("started");
-        if(name === "Kraje"){
+        if (name === "Kraje") {
             setTime(600);
         }
         if (level === "hard") {
             setLevel("hard")
-        }else if (level === "easy") {
+        } else if (level === "easy") {
             setLevel("easy")
         }
         setNumberOfQuestions(leftAnswers.length);
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
+        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
     };
 
 
@@ -67,7 +67,7 @@ const Game = ({name}) => {
         if (time === 0 || (leftAnswers.length === 0 && numberQuestion > numberOfQuestions && gameStatus === "started")) {
             setGameStatus("ended")
         }
-    }, [time,leftAnswers, numberQuestion, numberOfQuestions, gameStatus]);
+    }, [time, leftAnswers, numberQuestion, numberOfQuestions, gameStatus]);
     useEffect(() => {
         reset();
         setGameStatus("chooseLevel")
@@ -80,36 +80,42 @@ const Game = ({name}) => {
         setPlayerName(event.target.value);
     };
 
-    const submitName = () => {
-        let timeSpent= 0;
-        if(name === "Kraje"){
-            timeSpent = 600 - time;
-        }else{
-            timeSpent = 300 - time;
-        }
+    const submitName = (event) => {
 
-        fetch(`http://localhost:3000/rankings`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                playerName,
-                points,
-                timeSpent,
-                name,
-                level
+        if (playerName.length < 3 || playerName.length > 10) {
+            setErrorMessage('Nazwa powinna zawierać od 3 do 10 znaków');
+        } else {
+            setErrorMessage('');
+            let timeSpent = 0;
+            if (name === "Kraje") {
+                timeSpent = 600 - time;
+            } else {
+                timeSpent = 300 - time;
+            }
+
+            fetch(`http://localhost:3000/rankings`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    playerName,
+                    points,
+                    timeSpent,
+                    name,
+                    level
+                })
             })
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Successfully added:', data);
-                reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        setGameStatus("chooseLevel")
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Successfully added:', data);
+                    reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            setGameStatus("chooseLevel")
+        }
     };
 
 
@@ -122,7 +128,7 @@ const Game = ({name}) => {
                         <Picture
                             srcImg={'https://flagcdn.com/160x120/' + Object.keys(answersPoll).at(correctAnswer) + '.png'}/>
 
-                            <Answers level={level} name={name}/>
+                        <Answers level={level} name={name}/>
 
                     </div>
                     {isMobile ? (
@@ -155,8 +161,9 @@ const Game = ({name}) => {
                     <h1>Gratulacje twój wynik wynosi: {points} . Wpisz swoją nazwe</h1>
                     <div className="endGameFields">
                         <input className="nameInput" value={playerName} onChange={handleInputChange}/>
-                        <button className="submitName" onClick={() => submitName()}>-></button>
+                        <button className="submitName" onClick={(e) => submitName(e)}>-></button>
                     </div>
+                    {errorMessage && <p className="errorMessage">{errorMessage}</p>}
                 </div>
             )}
         </div>

@@ -64,7 +64,7 @@ const Answers = ({level,name}) => {
                 {level==="hard" ? (
                     <div className="hardGameFields">
                         <input className="hardGameInput" value={hardInput} onChange={handleHardInputChange} onKeyDown={handleKeyDown} />
-                        <button className="hardGameButton" onClick={() => submitAnswer()}>...</button>
+                        <button className="hardGameButton" onClick={() => submitAnswer()}>-></button>
                     </div>
                 ) : (
                     answers.map((answer, index) => (
