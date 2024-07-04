@@ -76,6 +76,7 @@
 .startQuizContainer{
   display: flex;
   flex-direction: column;
+  width: 90%;
   & h1{
     font-size: 2em;
     padding: 10px;
@@ -83,13 +84,15 @@
   }
   & .startGameButtons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     & .easyButton,.hardButton{
       color: $accent-color1;
       padding: 20px 30px;
       border-radius: 5px;
       width: 8em;
       cursor: pointer;
+      margin: 10px;
       font-size: 1em;
       font-weight: bold;
       text-align: center;
@@ -157,4 +160,13 @@
     display: flex;
     justify-content: space-between;
   }
+}
+@media (max-width: 400px) {
+  .startQuizContainer{
+    font-size: 15px;
+  }
+  .startGameButtons{
+    flex-direction: column;
+  }
+
 }

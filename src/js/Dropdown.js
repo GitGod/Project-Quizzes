@@ -11,22 +11,22 @@ const Dropdown = () => {
     };
 
     return (
-        <div className="dropdown">
+        <div className="menu">
             {isMobile ? (
-                <>
-                    <button className="dropdown-toggle" onClick={toggleDropdown}>
+                <div className="menuDropdown">
+                    <button className="dropdownToggle" onClick={toggleDropdown}>
                         Menu
                     </button>
                     {isOpen && (
-                        <ul className="dropdown-menu">
+                        <ul className="dropdownList">
                             <li><a onClick={toggleDropdown} href="#/Kraje">Kraje</a></li>
                             <li><a onClick={toggleDropdown} href="#/KrajeEuropa">Kraje Europa</a></li>
                             <li><a onClick={toggleDropdown} href="#/ranking"><i className="fas fa-trophy"></i> Ranking</a></li>
                         </ul>
                     )}
-                </>
+                </div>
             ) : (
-                <ul className="dropdown-list">
+                <ul className="menuList">
                     <li><a href="#/Kraje">Kraje</a></li>
                     <li><a href="#/KrajeEuropa">Kraje Europa</a></li>
                 </ul>
