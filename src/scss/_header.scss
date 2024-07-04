@@ -1,14 +1,15 @@
 .header{
-  color: white;
+  color: $accent-color1;
   width: 100%;
   height: 80px;
   background-image: $accent-color2;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   & .header-title{
     opacity: 0.6;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 600;
     margin: 8px 0 10px 20px;
     text-decoration: none;

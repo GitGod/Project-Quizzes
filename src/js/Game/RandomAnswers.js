@@ -12,17 +12,18 @@ export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer,name) =
         number = Math.floor(Math.random() * Object.keys(numbersEu).length);
     }
     let correctNumber = Math.floor(Math.random() * Object.keys(leftAnswers).length);
+    console.log(listOfFlags)
     numbers.push(leftAnswers[correctNumber]);
     setCorrectAnswer(leftAnswers[correctNumber]);
     for (let i = 0; i < 3; i++) {
         if(name === "Kraje") {
-            while (numbers.includes(listOfFlags[number])) {
-                number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
+            while (numbers.includes(number)) {
+               number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
             }
-            numbers.push(listOfFlags[number])
+            numbers.push(number)
         } else{
             while (numbers.includes(numbersEu[number])) {
-                number = Math.floor(Math.random() * Object.keys(numbersEu).length);
+                number = Math.floor(Math.random() * numbersEu.length);
             }
             numbers.push(numbersEu[number])
         }

@@ -1,60 +1,116 @@
 {
   "rankings": [
     {
-      "id": "26b8",
-      "query": "65464",
+      "id": "3a82",
+      "playerName": "444",
+      "points": 0,
+      "timeSpent": 1,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "3a44",
+      "playerName": "555",
+      "points": 5,
+      "timeSpent": 1,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "584c",
+      "playerName": "fff",
+      "points": 5,
+      "timeSpent": 7,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "cb09",
+      "playerName": "xxxx",
+      "points": 9,
+      "timeSpent": 23,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "5044",
+      "playerName": "kk",
+      "points": 0,
+      "timeSpent": 300,
+      "name": "Kraje",
+      "level": null
+    },
+    {
+      "id": "8adc",
+      "playerName": "ggg",
+      "points": 3,
+      "timeSpent": 1,
+      "name": "Kraje Europa",
+      "level": "easy"
+    },
+    {
+      "id": "2cbd",
+      "playerName": "455",
+      "points": 6,
+      "timeSpent": 5,
+      "name": "Kraje Europa",
+      "level": "easy"
+    },
+    {
+      "id": "e2aa",
+      "playerName": "",
+      "points": 0,
+      "timeSpent": -289,
+      "name": "Kraje",
+      "level": "hard"
+    },
+    {
+      "id": "fede",
+      "playerName": "gdgd",
+      "points": 0,
+      "timeSpent": -300,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "23c0",
+      "playerName": "5435",
       "points": 1,
-      "timeLeft": 296,
-      "name": "Kraje"
+      "timeSpent": 1,
+      "name": "Kraje Europa",
+      "level": "easy"
     },
     {
-      "id": "3a0d",
-      "query": "9898",
+      "id": "ebc0",
+      "playerName": "54353",
+      "points": 3,
+      "timeSpent": 2,
+      "name": "Kraje",
+      "level": "easy"
+    },
+    {
+      "id": "b1e4",
+      "playerName": "53454",
       "points": 0,
-      "timeLeft": 298,
-      "name": "Kraje"
+      "timeSpent": 5,
+      "name": "Kraje",
+      "level": "hard"
     },
     {
-      "id": "04de",
-      "nazwaGracza": "fsfa",
-      "points": 0,
-      "timeLeft": 296,
-      "name": "Kraje"
+      "id": "d2d9",
+      "playerName": "fsfsf",
+      "points": 15,
+      "timeSpent": 16,
+      "name": "Kraje Europa",
+      "level": "easy"
     },
     {
-      "id": "0360",
-      "playerName": "fwfw",
-      "points": 1,
-      "timeLeft": 299,
-      "name": "Kraje"
-    },
-    {
-      "id": "2456",
-      "playerName": "77",
-      "points": 0,
-      "timeLeft": 1,
-      "name": "Kraje"
-    },
-    {
-      "id": "2a58",
-      "playerName": "78",
-      "points": 0,
-      "timeLeft": 4,
-      "name": "Kraje"
-    },
-    {
-      "id": "41ce",
-      "playerName": "6464",
-      "points": 2,
-      "timeLeft": 5,
-      "name": "Kraje"
-    },
-    {
-      "id": "6e0a",
-      "playerName": "hhfhfhf",
-      "points": 1,
-      "timeLeft": 11,
-      "name": "Kraje"
+      "id": "bfdf",
+      "playerName": "bb",
+      "points": 44,
+      "timeSpent": 156,
+      "name": "Kraje Europa",
+      "level": "hard"
     }
   ]
 }

@@ -29,7 +29,9 @@ const Answers = ({level,name}) => {
         }
         setNumberQuestion(numberQuestion + 1);
         console.log(leftAnswers)
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
+        if(leftAnswers.length > 0) {
+            randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
+        }
 
     };
     useEffect(() => {
@@ -50,7 +52,9 @@ const Answers = ({level,name}) => {
         }
         setNumberQuestion(numberQuestion + 1);
         setHardInput('');
-        randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,name)
+        if(leftAnswers.length > 0) {
+            randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
+        }
     };
 
     return (

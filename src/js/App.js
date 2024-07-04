@@ -18,6 +18,7 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import Ranking from "./Ranking";
 import Game from "./Game/Game";
 import {flags} from "./Api/Flags";
+import Footer from "./Footer";
 
 
 // APP
@@ -46,6 +47,7 @@ const App = () => {
                                             <Route path="/Kraje" element={<Game name={"Kraje"}/>}/>
                                             <Route path="/KrajeEuropa" element={<Game name={"Kraje Europa"}/>}/>
                                         </Routes>
+                                        <Footer/>
                                     </HashRouter>
                                 </NumberQuestion.Provider>
                             </LeftAnswers.Provider>
