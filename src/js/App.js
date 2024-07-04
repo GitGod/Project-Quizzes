@@ -19,6 +19,7 @@ import Ranking from "./Ranking";
 import Game from "./Game/Game";
 import {flags} from "./Api/Flags";
 import Footer from "./Footer";
+import MainPage from "./MainPage";
 
 
 // APP
@@ -43,7 +44,7 @@ const App = () => {
                                         <Header/>
                                         <Routes>
                                             <Route path="/ranking" element={<Ranking/>}/>
-                                            <Route path="/" element={<Ranking/>}/>
+                                            <Route path="/" element={<MainPage/>}/>
                                             <Route path="/Kraje" element={<Game name={"Kraje"}/>}/>
                                             <Route path="/KrajeEuropa" element={<Game name={"Kraje Europa"}/>}/>
                                         </Routes>

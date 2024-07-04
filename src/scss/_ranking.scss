@@ -1,9 +1,12 @@
 .ranking {
-  background: none;
   padding: 20px;
-  border-radius: 8px;
-  width: 500px;
   text-align: center;
+  background-image: $accent-color8;
+}
+.rankingTable{
+  background: none;
+  width: 500px;
+  border-radius: 8px;
 }
 
 .rankingFields{
@@ -49,7 +52,7 @@ thead {
   color: #fff;
 }
 td{
-  color: black;
+  color: $accent-color14;
 }
 
 th, td {
@@ -58,8 +61,21 @@ th, td {
   text-align: center;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+thead tr{
+  background-color: black;
+}
+
+tr{
+  background-color: $accent-color19;
+}
+tbody tr:nth-child(1) {
+  background-color: $accent-color16;
+}
+tbody tr:nth-child(2) {
+  background-color: $accent-color17;
+}
+tbody tr:nth-child(3) {
+  background-color: $accent-color18;
 }
 
 @media (max-width: 800px) {

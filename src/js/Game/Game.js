@@ -114,7 +114,7 @@ const Game = ({name}) => {
 
 
     return (
-        <>
+        <div className="container game">
             {gameStatus === "started" ? (
                 <div className="mainGameContainer">
                     {!isMobile && <Timer/>}
@@ -159,7 +159,7 @@ const Game = ({name}) => {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

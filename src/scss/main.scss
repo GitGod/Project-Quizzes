@@ -2,6 +2,7 @@
 @import "colors";
 @import 'header';
 @import 'footer';
+@import 'mainPage';
 @import 'dropdown';
 @import 'ranking';
 @import 'game';
@@ -31,12 +32,13 @@ a {
 .container {
   width: calc(100vw - 50px);
   max-width: 1200px;
-  min-height: 750px;
+  min-height: 400px;
   height: auto;
   padding: 0;
   margin: 0 auto;
   display: flex;
   background-color: $accent-color2;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   color: $accent-color1;

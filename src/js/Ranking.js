@@ -52,10 +52,10 @@ const Ranking = () => {
     const handleChange = (e) => setQuizName(e.target.value);
 
     return (
-        <div className="ranking">
+        <div className="ranking container">
 
             {rankings && (
-                <table>
+                <table className="rankingTable">
                     <thead>
                     <tr>
                         <th>Place</th>
