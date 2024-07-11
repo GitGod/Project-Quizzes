@@ -19,12 +19,17 @@ To run the application locally, follow these steps:
     npm install
     ```
 
-3. Start the development server:
+3. Run json server:
+    ```sh
+    json-server --watch ranking.json
+    ```
+
+4. Start the development server:
     ```sh
     npm start
     ```
 
-4. Open a browser and go to `http://localhost:3000`
+5. Open a browser and go to `http://localhost:3000`
 
 ## Functions
 - Users can play Flag quiz and Europa Flag quiz
