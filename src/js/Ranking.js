@@ -3,7 +3,7 @@ import {fetchResp} from "./Api/utils";
 
 const Ranking = () => {
     const [rankings, setRanking] = useState(null);
-    const [quizName, setQuizName] = useState("Kraje");
+    const [quizName, setQuizName] = useState("Flagi");
     const [quizLevel, setQuizLevel] = useState("easy");
     const [button1Color, setButton1Color] = useState('red');
     const [button2Color, setButton2Color] = useState('white');
@@ -28,8 +28,8 @@ const Ranking = () => {
     function sortData(data, key, key2) {
         return data.sort((a, b) => {
             if (b[key] === a[key]) {
-                if (a[key2] < b[key2]) return 1;
-                if (a[key2] > b[key2]) return -1;
+                if (a[key2] < b[key2]) return -1;
+                if (a[key2] > b[key2]) return 1;
                 return 0;
             }
             return b[key] - a[key];
@@ -77,8 +77,8 @@ const Ranking = () => {
             )}
             <div className="rankingFields">
                 <select className="rankingSelect" onChange={handleChange}>
-                    <option value="Kraje">Kraje</option>
-                    <option value="Kraje Europa">Kraje Europa</option>
+                    <option value="Flagi">Flagi</option>
+                    <option value="Flagi Europa">Flagi Europa</option>
                 </select>
                 <div className="rankingButtons">
                     <button className="easyButtonRanking" style={{backgroundColor: button1Color}}

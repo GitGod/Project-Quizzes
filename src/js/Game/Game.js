@@ -16,6 +16,8 @@ import {
     TimeContext
 } from "../MyContext";
 import {useMediaQuery} from "react-responsive";
+import {useNavigate} from "react-router-dom";
+
 
 
 const Game = ({name}) => {
@@ -38,7 +40,12 @@ const Game = ({name}) => {
 
     let listOfFlags = flags();
     let listX = setNumbers(answersPoll, name);
+    const navigate = useNavigate();
 
+
+    const goToRanking = () => {
+        navigate('/ranking');
+    };
 
     const reset = () => {
         setPlayerName('');
@@ -50,8 +57,8 @@ const Game = ({name}) => {
 
     const startGame = (level) => {
         setGameStatus("started");
-        if (name === "Kraje") {
-            setTime(600);
+        if (name === "Flagi") {
+            setTime(599);
         }
         if (level === "hard") {
             setLevel("hard")
@@ -80,6 +87,12 @@ const Game = ({name}) => {
         setPlayerName(event.target.value);
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            submitName();
+        }
+    };
+
     const submitName = (event) => {
 
         if (playerName.length < 3 || playerName.length > 10) {
@@ -87,8 +100,8 @@ const Game = ({name}) => {
         } else {
             setErrorMessage('');
             let timeSpent = 0;
-            if (name === "Kraje") {
-                timeSpent = 600 - time;
+            if (name === "Flagi") {
+                timeSpent = 599 - time;
             } else {
                 timeSpent = 300 - time;
             }
@@ -115,6 +128,7 @@ const Game = ({name}) => {
                     console.error('Error:', error);
                 });
             setGameStatus("chooseLevel")
+            goToRanking();
         }
     };
 
@@ -158,9 +172,9 @@ const Game = ({name}) => {
 
             ) : (
                 <div className="endGame">
-                    <h1>Gratulacje twój wynik wynosi: {points} . Wpisz swoją nazwe</h1>
+                    <h1>Gratulacje twój wynik wynosi: {points} . Wpisz swoją nazwe:</h1>
                     <div className="endGameFields">
-                        <input className="nameInput" value={playerName} onChange={handleInputChange}/>
+                        <input className="nameInput" value={playerName} onChange={handleInputChange} onKeyDown={handleKeyDown} />
                         <button className="submitName" onClick={(e) => submitName(e)}>-></button>
                     </div>
                     {errorMessage && <p className="errorMessage">{errorMessage}</p>}
