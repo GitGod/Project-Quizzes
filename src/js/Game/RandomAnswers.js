@@ -1,27 +1,29 @@
 import {useContext, useEffect} from "react";
 import {LeftAnswers} from "../MyContext";
 
-export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer,name) => {
+let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 77, 79, 80, 81, 87, 93, 102, 104, 106, 113, 114, 133, 137, 138, 139, 142, 143, 144, 148, 157, 170, 171, 183, 188, 193, 194, 195, 201, 204, 206, 208, 229, 234, 291, 300]
 
-    let numbersEu = [0,5,11,16,19,21,35,42,55,56,58,63,67,70,74,75,77,79,80,81,87,93,102,104,106,113,114,133,137,138,139,142,143,144,148,157,170,171,183,188,193,194,195,201,204,206,208,229,234,291,300]
+export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer, name) => {
+
+    //let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 77, 79, 80, 81, 87, 93, 102, 104, 106, 113, 114, 133, 137, 138, 139, 142, 143, 144, 148, 157, 170, 171, 183, 188, 193, 194, 195, 201, 204, 206, 208, 229, 234, 291, 300]
     let numbers = [];
-    let number  = 0;
-    if(name === "Kraje") {
+    let number = 0;
+    if (name === "Flagi") {
         number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
-    } else{
+    } else {
         number = Math.floor(Math.random() * Object.keys(numbersEu).length);
     }
     let correctNumber = Math.floor(Math.random() * Object.keys(leftAnswers).length);
-    console.log(listOfFlags)
+
     numbers.push(leftAnswers[correctNumber]);
     setCorrectAnswer(leftAnswers[correctNumber]);
     for (let i = 0; i < 3; i++) {
-        if(name === "Kraje") {
+        if (name === "Flagi") {
             while (numbers.includes(number)) {
-               number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
+                number = Math.floor(Math.random() * Object.keys(listOfFlags).length);
             }
             numbers.push(number)
-        } else{
+        } else {
             while (numbers.includes(numbersEu[number])) {
                 number = Math.floor(Math.random() * numbersEu.length);
             }
@@ -29,28 +31,26 @@ export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer,name) =
         }
     }
 
-    console.log(numbers);
     numbers = randomFilter(numbers);
-    console.log(numbers);
     return numbers;
 }
 
-export const setNumbers = (listOfFlags,name) => {
+export const setNumbers = (listOfFlags, name) => {
     const {leftAnswers, setLeftAnswers} = useContext(LeftAnswers);
     let numbers = [];
-    let numbersEu = [0,5,11,16,19,21,35,42,55,56,58,63,67,70,74,75,77,79,80,81,87,93,102,104,106,113,114,133,137,138,139,142,143,144,148,157,170,171,183,188,193,194,195,201,204,206,208,229,234,291,300]
+   // let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 77, 79, 80, 81, 87, 93, 102, 104, 106, 113, 114, 133, 137, 138, 139, 142, 143, 144, 148, 157, 170, 171, 183, 188, 193, 194, 195, 201, 204, 206, 208, 229, 234, 291, 300]
 
     useEffect(() => {
-       if(name === "Kraje") {
-           for (let i = 0; i < Object.keys(listOfFlags).length; i++) {
-               numbers.push(i);
-           }
-           setLeftAnswers(numbers);
-       }else if(name === "Kraje Europa"){
-           setLeftAnswers(numbersEu)
-       }
+        if (name === "Flagi") {
+            for (let i = 0; i < Object.keys(listOfFlags).length; i++) {
+                numbers.push(i);
+            }
+            setLeftAnswers(numbers);
+        } else if (name === "Flagi Europa") {
+            setLeftAnswers(numbersEu)
+        }
 
-    }, [listOfFlags,name]);
+    }, [listOfFlags, name]);
     return leftAnswers;
 }
 
@@ -69,8 +69,8 @@ export const getRandomElement = (array) => {
     return array[randomIndex]; // Zwraca element o losowym indeksie
 };
 
-export const randomNewQuestion = (setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers,quizName) => {
-    let randomAnswersQuiz = randomAnswers(answersPoll, leftAnswers, setCorrectAnswer,quizName)
+export const randomNewQuestion = (setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, quizName) => {
+    let randomAnswersQuiz = randomAnswers(answersPoll, leftAnswers, setCorrectAnswer, quizName)
     setAnswers([answersPoll[Object.keys(answersPoll).at(randomAnswersQuiz[0])], answersPoll[Object.keys(answersPoll).at(randomAnswersQuiz[1])], answersPoll[Object.keys(answersPoll).at(randomAnswersQuiz[2])], answersPoll[Object.keys(answersPoll).at(randomAnswersQuiz[3])]]);
 
 };

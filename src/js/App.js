@@ -45,8 +45,8 @@ const App = () => {
                                         <Routes>
                                             <Route path="/ranking" element={<Ranking/>}/>
                                             <Route path="/" element={<MainPage/>}/>
-                                            <Route path="/Kraje" element={<Game name={"Kraje"}/>}/>
-                                            <Route path="/KrajeEuropa" element={<Game name={"Kraje Europa"}/>}/>
+                                            <Route path="/Flagi" element={<Game name={"Flagi"}/>}/>
+                                            <Route path="/FlagiEuropa" element={<Game name={"Flagi Europa"}/>}/>
                                         </Routes>
                                         <Footer/>
                                     </HashRouter>

@@ -14,7 +14,7 @@ const Answers = ({level,name}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const {numberQuestion, setNumberQuestion} = useContext(NumberQuestion)
-    const question = numberQuestion + ". Jakiego kraju to flaga?";
+    const question = numberQuestion + ". Czego to flaga?";
     const {points, setPoints} = useContext(PointsContext);
     const {answers, setAnswers} = useContext(AnswersContext);
     const {correctAnswer, setCorrectAnswer} = useContext(CorrectAnswerContext);
@@ -28,7 +28,6 @@ const Answers = ({level,name}) => {
             setPoints(points + 1);
         }
         setNumberQuestion(numberQuestion + 1);
-        console.log(leftAnswers)
         if(leftAnswers.length > 0) {
             randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
         }
@@ -36,7 +35,6 @@ const Answers = ({level,name}) => {
     };
     useEffect(() => {
         deleteNumber(leftAnswers, setLeftAnswers, correctAnswer);
-        console.log(`Count has changed to: ${correctAnswer}`);
     }, [correctAnswer]);
     const handleHardInputChange = (event) => {
         setHardInput(event.target.value);
