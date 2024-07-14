@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect, useContext} from "react";
+import React, {useState} from "react";
 import {createRoot} from "react-dom/client";
 import {
     AnswersContext,
@@ -11,7 +11,6 @@ import {
 } from "./MyContext";
 
 
-// STYLES
 import '../scss/main.scss';
 import Header from "./Header";
 import {HashRouter, Route, Routes} from "react-router-dom";

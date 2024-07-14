@@ -19,7 +19,7 @@ const Ranking = () => {
                 setRanking(filteredData)
             })
             .catch((err) => console.log(err));
-    }, [quizName, quizLevel]);
+    }, [quizName, quizLevel,[]]);
 
     function filterData(data, quizLevel, name) {
         return data.filter(ranking => ranking.name === name).filter(ranking => ranking.level === quizLevel);
