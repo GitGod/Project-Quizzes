@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import {fetchResp} from "./Api/utils";
+import React from 'react';
 
 const MainPage = () => {
     return (
-        <div className="mainPage container" >
+        <div className="mainPage container">
             <h1>Witaj w aplikacji quizzy</h1>
         </div>
     );

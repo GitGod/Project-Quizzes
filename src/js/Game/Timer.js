@@ -16,14 +16,13 @@ const Timer = () => {
         } else if (!isActive && time !== 0) {
             clearInterval(interval);
         }
-        if(time === 0){
+        if (time === 0) {
             setIsActive(false)
             clearInterval(interval)
         }
 
         return () => clearInterval(interval);
     }, [isActive, time]);
-
 
 
     return (

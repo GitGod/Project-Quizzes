@@ -21,7 +21,8 @@ const Dropdown = () => {
                         <ul className="dropdownList">
                             <li><a onClick={toggleDropdown} href="#/Flagi">Flagi</a></li>
                             <li><a onClick={toggleDropdown} href="#/FlagiEuropa">Flagi Europa</a></li>
-                            <li><a onClick={toggleDropdown} href="#/ranking"><i className="fas fa-trophy"></i> Ranking</a></li>
+                            <li><a onClick={toggleDropdown} href="#/ranking"><i
+                                className="fas fa-trophy"></i> Ranking</a></li>
                         </ul>
                     )}
                 </div>

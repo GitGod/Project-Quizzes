@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {deleteNumber,randomNewQuestion} from "./RandomAnswers";
+import {deleteNumber, randomNewQuestion} from "./RandomAnswers";
 import {
     AnswersContext,
     AnswersPoll,
@@ -10,7 +10,7 @@ import {
 } from "../MyContext";
 
 
-const Answers = ({level,name}) => {
+const Answers = ({level, name}) => {
 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const {numberQuestion, setNumberQuestion} = useContext(NumberQuestion)
@@ -28,7 +28,7 @@ const Answers = ({level,name}) => {
             setPoints(points + 1);
         }
         setNumberQuestion(numberQuestion + 1);
-        if(leftAnswers.length > 0) {
+        if (leftAnswers.length > 0) {
             randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
         }
 
@@ -50,7 +50,7 @@ const Answers = ({level,name}) => {
         }
         setNumberQuestion(numberQuestion + 1);
         setHardInput('');
-        if(leftAnswers.length > 0) {
+        if (leftAnswers.length > 0) {
             randomNewQuestion(setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, name)
         }
     };
@@ -59,21 +59,22 @@ const Answers = ({level,name}) => {
         <div className="quiz-container">
             <h2>{question}</h2>
             <div className="answers-container">
-                {level==="hard" ? (
+                {level === "hard" ? (
                     <div className="hardGameFields">
-                        <input className="hardGameInput" value={hardInput} onChange={handleHardInputChange} onKeyDown={handleKeyDown} />
+                        <input className="hardGameInput" value={hardInput} onChange={handleHardInputChange}
+                               onKeyDown={handleKeyDown}/>
                         <button className="hardGameButton" onClick={() => submitAnswer()}>-></button>
                     </div>
                 ) : (
                     answers.map((answer, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleAnswerClick(answer)}
-                                className="answerButton"
-                            >
-                                {answer}
-                            </button>
-                        ))
+                        <button
+                            key={index}
+                            onClick={() => handleAnswerClick(answer)}
+                            className="answerButton"
+                        >
+                            {answer}
+                        </button>
+                    ))
                 )}
             </div>
         </div>

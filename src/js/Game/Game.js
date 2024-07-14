@@ -19,7 +19,6 @@ import {useMediaQuery} from "react-responsive";
 import {useNavigate} from "react-router-dom";
 
 
-
 const Game = ({name}) => {
 
     const isMobile = useMediaQuery({maxWidth: 800});
@@ -38,8 +37,8 @@ const Game = ({name}) => {
     const [errorMessage, setErrorMessage] = useState('');
 
 
-    let listOfFlags = flags();
-    let listX = setNumbers(answersPoll, name);
+    flags();
+    setNumbers(answersPoll, name);
     const navigate = useNavigate();
 
 
@@ -174,7 +173,8 @@ const Game = ({name}) => {
                 <div className="endGame">
                     <h1>Gratulacje twój wynik wynosi: {points} . Wpisz swoją nazwe:</h1>
                     <div className="endGameFields">
-                        <input className="nameInput" value={playerName} onChange={handleInputChange} onKeyDown={handleKeyDown} />
+                        <input className="nameInput" value={playerName} onChange={handleInputChange}
+                               onKeyDown={handleKeyDown}/>
                         <button className="submitName" onClick={(e) => submitName(e)}>-></button>
                     </div>
                     {errorMessage && <p className="errorMessage">{errorMessage}</p>}

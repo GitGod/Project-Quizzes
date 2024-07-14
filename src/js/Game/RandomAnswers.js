@@ -5,7 +5,7 @@ let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 7
 
 export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer, name) => {
 
-    //let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 77, 79, 80, 81, 87, 93, 102, 104, 106, 113, 114, 133, 137, 138, 139, 142, 143, 144, 148, 157, 170, 171, 183, 188, 193, 194, 195, 201, 204, 206, 208, 229, 234, 291, 300]
+
     let numbers = [];
     let number = 0;
     if (name === "Flagi") {
@@ -38,7 +38,7 @@ export const randomAnswers = (listOfFlags, leftAnswers, setCorrectAnswer, name) 
 export const setNumbers = (listOfFlags, name) => {
     const {leftAnswers, setLeftAnswers} = useContext(LeftAnswers);
     let numbers = [];
-   // let numbersEu = [0, 5, 11, 16, 19, 21, 35, 42, 55, 56, 58, 63, 67, 70, 74, 75, 77, 79, 80, 81, 87, 93, 102, 104, 106, 113, 114, 133, 137, 138, 139, 142, 143, 144, 148, 157, 170, 171, 183, 188, 193, 194, 195, 201, 204, 206, 208, 229, 234, 291, 300]
+
 
     useEffect(() => {
         if (name === "Flagi") {
@@ -62,11 +62,6 @@ export const deleteNumber = (leftAnswers, setLeftAnswers, valueToRemove) => {
 
 const randomFilter = (array) => {
     return array.sort(() => 0.5 - Math.random());
-};
-
-export const getRandomElement = (array) => {
-    const randomIndex = Math.floor(Math.random() * array.length); // Losowy indeks
-    return array[randomIndex]; // Zwraca element o losowym indeksie
 };
 
 export const randomNewQuestion = (setAnswers, answersPoll, setAnswersPoll, setCorrectAnswer, correctAnswer, leftAnswers, quizName) => {

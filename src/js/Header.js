@@ -18,7 +18,8 @@ const Header = () => {
             <div className="left-items">
                 <a href="#/" className="header-title">Quizzes</a>
                 {!isMobile &&
-                    <button className="rankingButton" onClick={goToRanking}><i className="fas fa-trophy"></i>Ranking</button>}
+                    <button className="rankingButton" onClick={goToRanking}><i className="fas fa-trophy"></i>Ranking
+                    </button>}
             </div>
             <Dropdown/>
         </header>

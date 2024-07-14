@@ -4,7 +4,6 @@ import {AnswersPoll} from "../MyContext";
 
 export const flags = () => {
 
-    //const [flags, setFlags] = useState([]);
     const { answersPoll, setAnswersPoll} = useContext(AnswersPoll);
 
     useEffect(() => {
