@@ -161,6 +161,10 @@
     justify-content: space-between;
   }
 }
+.endGame{
+  margin: 10px;
+  text-align: center;
+}
 @media (max-width: 400px) {
   .startQuizContainer{
     font-size: 15px;
@@ -168,5 +172,6 @@
   .startGameButtons{
     flex-direction: column;
   }
+
 
 }

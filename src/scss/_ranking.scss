@@ -82,6 +82,7 @@ tbody tr:nth-child(3) {
 @media (max-width: 600px) {
   .rankingTable{
     width: 90%;
+    margin-top: 10px;
     font-size: 10px;
     table-layout: fixed;
   }
